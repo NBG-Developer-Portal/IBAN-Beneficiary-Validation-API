@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "42c85fae-c391-4959-8f69-e7abac8eb59f",
+		"_postman_id": "22eac230-4891-425b-b222-6b0e06090f33",
 		"name": "ibanBeneficiaryValidation - v2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -25,18 +25,18 @@
 							},
 							{
 								"key": "Client-Id",
-								"value": "{{client-id}}",
+								"value": "{{client_id}}",
 								"type": "text"
 							},
 							{
 								"key": "Application",
-								"value": "{{client-id}}",
+								"value": "{{client_id}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"sandboxId\": \"{{sandbox-id}}\"\r\n}",
+							"raw": "{\r\n  \"sandboxId\": \"{{sandbox_id}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,10 +44,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{host}}/Sandbox",
+							"raw": "https://{{root_url}}/Sandbox",
 							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"{{root_url}}"
 							],
 							"path": [
 								"Sandbox"
@@ -76,7 +76,7 @@
 							},
 							{
 								"key": "Client-Id",
-								"value": "{{client-id}}",
+								"value": "{{client_id}}",
 								"type": "text"
 							}
 						],
@@ -90,14 +90,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{host}}/sandbox/{{sandbox-id}}",
+							"raw": "https://{{root_url}}/sandbox/{{sandbox_id}}",
 							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"{{root_url}}"
 							],
 							"path": [
 								"sandbox",
-								"{{sandbox-id}}"
+								"{{sandbox_id}}"
 							]
 						}
 					},
@@ -120,13 +120,13 @@
 							},
 							{
 								"key": "Client-Id",
-								"value": "{{client-id}}",
+								"value": "{{client_id}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"applications\": null,\r\n  \"SandboxId\": \"{{sandbox-id}}\",\r\n  \"Version\": 1,\r\n  \"Users\": null\r\n}",
+							"raw": "{\r\n  \"applications\": null,\r\n  \"SandboxId\": \"{{sandbox_id}}\",\r\n  \"Version\": 1,\r\n  \"Users\": null\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -134,10 +134,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{host}}/sandbox/",
+							"raw": "https://{{root_url}}/sandbox/",
 							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"{{root_url}}"
 							],
 							"path": [
 								"sandbox",
@@ -164,33 +164,25 @@
 							},
 							{
 								"key": "Client-Id",
-								"value": "{{client-id}}",
+								"value": "{{client_id}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://{{host}}/sandbox/{{sandbox-id}}",
+							"raw": "https://{{root_url}}/sandbox/{{sandbox_id}}",
 							"protocol": "https",
 							"host": [
-								"{{host}}"
+								"{{root_url}}"
 							],
 							"path": [
 								"sandbox",
-								"{{sandbox-id}}"
-							],
-							"query": [
-								{
-									"key": "Application",
-									"value": "",
-									"disabled": true
-								}
+								"{{sandbox_id}}"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "NbgIban",
@@ -210,12 +202,12 @@
 					{
 						"key": "Sandbox-Id",
 						"type": "text",
-						"value": "{{sandbox-id}}"
+						"value": "{{sandbox_id}}"
 					},
 					{
 						"key": "Client-Id",
 						"type": "text",
-						"value": "{{client-id}}"
+						"value": "{{client_id}}"
 					}
 				],
 				"body": {
@@ -228,10 +220,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIban",
+					"raw": "https://{{root_url}}/beneficiaryValidation/nbgIban",
 					"protocol": "https",
 					"host": [
-						"{{host}}"
+						"{{root_url}}"
 					],
 					"path": [
 						"beneficiaryValidation",
@@ -259,12 +251,12 @@
 					{
 						"key": "Sandbox-Id",
 						"type": "text",
-						"value": "{{sandbox-id}}"
+						"value": "{{sandbox_id}}"
 					},
 					{
 						"key": "Client-Id",
 						"type": "text",
-						"value": "{{client-id}}"
+						"value": "{{client_id}}"
 					}
 				],
 				"body": {
@@ -277,362 +269,14 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIban",
+					"raw": "https://{{root_url}}/beneficiaryValidation/nbgIban",
 					"protocol": "https",
 					"host": [
-						"{{host}}"
+						"{{root_url}}"
 					],
 					"path": [
 						"beneficiaryValidation",
 						"nbgIban"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "otherBanksIban",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Sandbox-Id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					},
-					{
-						"key": "Application",
-						"value": "{{client-id}}",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"dateFrom\": \"2020-09-01\",\r\n    \"dateTo\": \"2020-09-30\",\r\n\t\"iban\": \"GR9101097155386567765933961\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/otherBanksIban",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"otherBanksIban"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "otherBanksIban- Failed - NBG IBAN",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Sandbox-Id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"iban\": \"GR1601100400000004012345600\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/otherBanksIban",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"otherBanksIban"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "otherBanksIban- Failed - Malformed IBAN",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Sandbox-Id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"iban\": \"1X1601100400000004012345600\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/otherBanksIban",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"otherBanksIban"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "nbgIbanDetailsMatch - Case 1",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "sandbox-id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"IBAN\": \"GR1601100400000004012345600\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIbanDetailsMatch",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"nbgIbanDetailsMatch"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "nbgIbanDetailsMatch - Case 2",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "sandbox-id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"IBAN\": \"GR1601100400000004012345600\",\r\n\t\"companyName\" : \"Tasty\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIbanDetailsMatch",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"nbgIbanDetailsMatch"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "nbgIbanDetailsMatch - Case 3",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "sandbox-id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"IBAN\": \"GR1601100400000004012345600\",\r\n\t\"likelyBeneficiaryName\": \"Κωσταντίνος\",\r\n\t\"likelyBeneficiaryMidName\": \"\",\r\n\t\"likeliyBeneficiarySurName\" : \"Παπαδόπουλος\",\r\n\t\"dateOfBirth\" : \"1980-12-01\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIbanDetailsMatch",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"nbgIbanDetailsMatch"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "nbgIbanDetailsMatch - Failed",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "sandbox-id",
-						"type": "text",
-						"value": "{{sandbox-id}}"
-					},
-					{
-						"key": "Client-Id",
-						"type": "text",
-						"value": "{{client-id}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"IBAN\": \"GG1601100400000004012345600\",\r\n\t\"likelyBeneficiaryName\": \"Κωσταντίνος\",\r\n\t\"likelyBeneficiaryMidName\": \"\",\r\n\t\"likeliyBeneficiarySurName\" : \"Παπαδόπουλος\",\r\n\t\"dateOfBirth\" : \"1980-12-01\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://{{host}}/beneficiaryValidation/nbgIbanDetailsMatch",
-					"protocol": "https",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"beneficiaryValidation",
-						"nbgIbanDetailsMatch"
 					]
 				}
 			},
@@ -643,18 +287,53 @@
 		"type": "oauth2",
 		"oauth2": [
 			{
-				"key": "accessToken",
-				"value": "0ddb3518329b6bb598ed1d17a461e691bbd5476ccb943b4425042359de770db6",
+				"key": "accessTokenUrl",
+				"value": "{{token_url}}",
 				"type": "string"
 			},
 			{
-				"key": "tokenType",
-				"value": "Bearer",
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "{{scope}}",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "{{callback_url}}",
 				"type": "string"
 			},
 			{
 				"key": "addTokenTo",
 				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
 				"type": "string"
 			}
 		]
@@ -663,7 +342,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9ef1a314-c1c3-4f82-b945-52e37757689d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -673,13 +351,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "46e87399-07d8-44ef-b951-56a3a2ddeede",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
