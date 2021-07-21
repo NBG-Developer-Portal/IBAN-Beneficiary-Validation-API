@@ -4,16 +4,16 @@
 ### **Introduction to the API**
 The NBG IBAN Beneficiary Validator API aims to enable End Customers of the Bank's ecosystem to validate an IBAN for antifraud and security cases.
 
-One using the API is able to (1) retrieve an NBG account's beneficiaries, (2) calculate the confidence of a third bank's IBAN where the most likely beneficiaries names are returned, and finally (3) validate an NBG Iban against certain criteria and calculate the results confidence level.
+One using the API is able to retrieve an NBG account's beneficiaries.
 
 ### **Real Life Use Case Scenario**
-This API helps you validate an IBAN and calculate its "confidence".
+This API helps you validate an IBAN and get a list of it's beneficiaries.
 
 ### **Create Sandbox**
 Your first job is to create a sandbox and save your **Sandbox-id** in order to be able to **"play"** with the api.
 
 We will create our sandbox by making an **HTTP POST** request to the following URL:
->  https://apis.nbg.gr/sandbox/iban.beneficiary.validation/oauth2/v2
+>  https://apis.nbg.gr/sandbox/iban.beneficiary.validation/oauth2/v2/Sandbox
 
 Request Body:
 ```json
@@ -38,8 +38,8 @@ The following headers are required for every call. In postman they are in the ap
 
 ``` 
 ## **Scenario Request**
-You send **POST ibanvalidation/validateNBGiban** request to get a list of all available white list actions.
->  https://apis.nbg.gr/sandbox/iban.beneficiary.validation/oauth2/v2/ibanvalidation/validateNBGiban
+You send **POST /beneficiaryValidation/nbgIban** request to get a list of the masked full names of the beneficiaries of an NBG IBAN:
+>  https://apis.nbg.gr/sandbox/iban.beneficiary.validation/oauth2/v2/beneficiaryValidation/nbgIban
 
 **Request**
 ```json
